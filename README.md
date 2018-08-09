@@ -1,4 +1,7 @@
 # Vuugaa
+[![CircleCI](https://circleci.com/gh/chadwalt/ride-sharing-app.svg?style=svg)](https://circleci.com/gh/chadwalt/ride-sharing-app)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9b38ea3648f389b9fd27/maintainability)](https://codeclimate.com/github/chadwalt/ride-sharing-app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9b38ea3648f389b9fd27/test_coverage)](https://codeclimate.com/github/chadwalt/ride-sharing-app/test_coverage)
 
 Vuugaa is a RideSharing application that allows you and other Andelans to collaborate and carpool to work.
 
