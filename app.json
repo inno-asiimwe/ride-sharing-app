@@ -1,0 +1,26 @@
+{
+  "name": "ride-sharing-app",
+  "scripts": {
+  },
+  "env": {
+    "DATABASE_USER": {
+      "generator": "secret"
+    },
+    "DATABASE_PASSWORD": {
+      "generator": "secret"
+    },
+    "DATABASE_DEVELOPMENT": {
+      "generator": "secret"
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
