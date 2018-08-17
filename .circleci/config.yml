@@ -7,6 +7,7 @@ jobs:
         environment:
           PGHOST: 127.0.0.1
           PGUSER: ubuntu
+          TEST_DATABASE_URL: postgresql://ubuntu@localhost/circle_test?sslmode=disable
           RAILS_ENV: test
       - image: circleci/postgres:9.6-alpine
         environment:
