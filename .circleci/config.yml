@@ -6,13 +6,13 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: ubuntu
+          PGUSER: root
           TEST_DATABASE_URL: postgresql://ubuntu@localhost/circle_test?sslmode=disable
           RAILS_ENV: test
       - image: circleci/postgres:9.6-alpine
         environment:
-          POSTGRES_USER: ubuntu
-          POSTGRES_DB: circle_test
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_test
     steps:
       - checkout
 
