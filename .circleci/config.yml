@@ -6,12 +6,12 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: postgres
+          PGUSER: ubuntu
           RAILS_ENV: test
       - image: circleci/postgres:9.6-alpine
         environment:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: ${DATABASE_NAME}
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: circle_test
     steps:
       - checkout
 
