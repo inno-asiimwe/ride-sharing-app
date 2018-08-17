@@ -8,11 +8,10 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: ${DATABASE_USER}
           RAILS_ENV: test
-      - image: circleci/postgres:9.4
+      - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: ${DATABASE_USER}
           POSTGRES_DB: ${DATABASE_NAME}
-          POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     steps:
       - checkout
 
@@ -30,6 +29,15 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install PostgreSQL Client
+          command: |
+            echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+            wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+            sudo apt-get update
+            sudo apt-get install postgresql-client-10
+            sudo -u postgres createuser ${DATABASE_USER}
+
 
       ## Set up database configuration.
       - run: bundle exec rake db:create db:schema:load
