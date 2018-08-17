@@ -40,7 +40,7 @@ jobs:
 
 
       ## Set up database configuration.
-      - run: bundle exec rake db:create db:schema:load
+      # - run: bundle exec rake db:create db:schema:load
 
       # run tests!
       - run:
